@@ -1,0 +1,16 @@
+window:
+  startup_mode: Fullscreen
+  dynamic_title: false
+
+font:
+  normal:
+    family: Hack Nerd Font Mono
+  size: 8.0
+
+key_bindings:
+  - key: F11
+    mods: Shift|Control
+    action: ToggleFullscreen
+  - key: N
+    mods: Shift|Control
+    action: SpawnNewInstance
