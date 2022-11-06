@@ -1,24 +1,15 @@
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_auto_ignore_ft = 'startify'
-vim.g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
-    git = { unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = "" },
-    folder = { default = "", open = "", empty = "", empty_open = "", symlink = "" }
-}
 
 require'nvim-tree'.setup {
     disable_netrw       = true,
     hijack_netrw        = true,
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
-    auto_close          = true,
     open_on_tab         = true,
-    update_to_buf_dir   = {
+    hijack_directories   = {
         enable = true,
         auto_open = true,
     },
-    nvim_tree_follow = 1,
     hijack_cursor       = false,
     update_cwd = true,
     diagnostics = {
@@ -34,15 +25,37 @@ require'nvim-tree'.setup {
         enable = true,
         update_cwd  = false,
     },
+    actions = {
+        open_file = {
+            resize_window = true,
+        },
+    },
     view = {
         width = 30,
         side = 'left',
-        auto_resize = true,
         mappings = {
             custom_only = false,
             list = {}
         }
-    }
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+        icons = {
+            glyphs = {
+                default = '',
+                symlink = '',
+                git = { unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = "" },
+                folder = { default = "", open = "", empty = "", empty_open = "", symlink = "" }
+            },
+        },
+    },
 }
 
 vim.cmd [[nnoremap <C-n> :NvimTreeToggle<CR>]]
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})

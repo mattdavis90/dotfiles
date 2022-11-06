@@ -2,8 +2,6 @@ local nvim_lsp = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require('lspkind').init()
-
 -- Diagnostics symbols for display in the sign column.
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
@@ -12,31 +10,67 @@ for type, icon in pairs(signs) do
 end
 vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
-
--- Get rid of ugly text to the right and let Lspsaga deal with it
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false,
-        underline = true,
-        signs = true,
-    }
-)
-
 -- Python
 nvim_lsp.pylsp.setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = {
+                    maxLineLength = 88, -- Make flake8 compatible with black
+                },
+            },
+        },
+    },
 }
 -- GoLang
 nvim_lsp.gopls.setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- JavaScript and Typescript
 nvim_lsp.tsserver.setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- C and Arduino
+nvim_lsp.ccls.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
+}
+-- Rust
+nvim_lsp.rust_analyzer.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- Svelte
+nvim_lsp.svelte.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- Lua
+nvim_lsp.sumneko_lua.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
 }
 -- PHP
 nvim_lsp.intelephense.setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         intelephense = {
             stubs = {
