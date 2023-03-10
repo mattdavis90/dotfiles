@@ -1,9 +1,10 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
+local fortune = require("alpha.fortune")
+
+if alpha == nil or dashboard == nil or fortune == nil then
     return
 end
-
-local dashboard = require "alpha.themes.dashboard"
 
 dashboard.section.buttons.val = {
     dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -16,7 +17,6 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
-    -- Number of plugins
     local total_plugins = #vim.tbl_keys(packer_plugins)
     local datetime = os.date "%d-%m-%Y %H:%M:%S"
     local plugins_text = "   "
@@ -30,19 +30,15 @@ local function footer()
     .. vim.version().patch
     .. "   "
     .. datetime
-
-    -- Quote
-    local fortune = require "alpha.fortune"
     local quote = table.concat(fortune(), "\n")
 
     return plugins_text .. "\n" .. quote
 end
 
 dashboard.section.footer.val = footer()
-
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
-
 dashboard.opts.opts.noautocmd = true
+
 alpha.setup(dashboard.opts)

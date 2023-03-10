@@ -12,7 +12,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "b4b4r07/emoji-cli"
-zplug "base16-project/base16-shell", use:"base16-shell.plugin.zsh", from:github
+zplug "tinted-theming/base16-shell", use:"base16-shell.plugin.zsh"
 
 # Install plugins if there are plugins that have not been installed
 # if ! zplug check --verbose; then

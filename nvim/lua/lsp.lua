@@ -30,6 +30,21 @@ nvim_lsp.gopls.setup {
 -- JavaScript and Typescript
 nvim_lsp.tsserver.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    commands = {
+        TSServerOrganizeImports = {
+            function()
+                local params = {
+                    command = "_typescript.organizeImports",
+                    arguments = { vim.api.nvim_buf_get_name(0) },
+                }
+                vim.lsp.buf.execute_command(params)
+            end,
+            description = "Organize Imports",
+        },
+    },
+}
+nvim_lsp.eslint.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- C and Arduino
 nvim_lsp.ccls.setup {
@@ -45,7 +60,7 @@ nvim_lsp.svelte.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- Lua
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         Lua = {
@@ -67,6 +82,12 @@ nvim_lsp.sumneko_lua.setup {
             },
         },
     },
+}
+nvim_lsp.jsonls.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+nvim_lsp.gdscript.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- PHP
 nvim_lsp.intelephense.setup {

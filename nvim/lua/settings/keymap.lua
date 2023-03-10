@@ -1,6 +1,6 @@
 vim.g.mapleader = ','
 
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help,
+vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help,
     { noremap = true, silent = true, desc = "Get function signature" })
 vim.keymap.set('n', 'gn', vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Goto next instance" })
 vim.keymap.set('n', 'gp', vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Goto previous instance" })

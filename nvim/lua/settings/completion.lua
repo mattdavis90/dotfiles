@@ -1,4 +1,8 @@
-local cmp = require'cmp'
+local cmp = require('cmp')
+
+if cmp == nil then
+    return
+end
 
 cmp.setup({
     snippet = {
@@ -18,10 +22,8 @@ cmp.setup({
         { name = 'vsnip' },
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'calc' },
         { name = 'treesitter' },
         { name = 'tags' },
-        { name = 'rg' },
     }),
     formatting = {
         format = require('lspkind').cmp_format({
@@ -33,10 +35,8 @@ cmp.setup({
                     vsnip      = " vsnip ",
                     buffer     = " buffer",
                     path       = " path  ",
-                    calc       = " calc  ",
                     treesitter = " tree  ",
                     tags       = " tag   ",
-                    rg         = " rg    ",
                 })[entry.source.name]
                 return vim_item
             end
@@ -44,7 +44,7 @@ cmp.setup({
     },
 })
 
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
@@ -55,5 +55,7 @@ cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = 'path' }
+    }, {
+        { name = 'cmdline' }
     })
 })

@@ -1,5 +1,6 @@
 require 'toggleterm'.setup {
     open_mapping = [[<leader>/]],
+    insert_mappings = false,
     direction = 'float',
 }
 
@@ -17,8 +18,8 @@ local lazygit = Terminal:new({
         },
     },
 })
-function _lazygit_toggle()
+function LazygitToggle()
     lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua LazygitToggle()<CR>", {noremap = true, silent = true})

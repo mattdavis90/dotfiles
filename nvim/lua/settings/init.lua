@@ -1,8 +1,6 @@
 vim.g.python_host_prog = '/home/matt/.virtualenvs/neovim/bin/python'
 vim.g.python3_host_prog = '/home/matt/.virtualenvs/neovim3/bin/python3'
 
-vim.g.base16colorspace = 256
-vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 
 vim.opt.autoindent = true
@@ -21,3 +19,6 @@ vim.opt.splitright = true
 vim.opt.mouse = 'a'
 vim.opt.hidden = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+require("settings.keymap")
+require("settings.completion")
