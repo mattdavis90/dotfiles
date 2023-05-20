@@ -23,7 +23,6 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'path' },
         { name = 'treesitter' },
-        { name = 'tags' },
     }),
     formatting = {
         format = require('lspkind').cmp_format({
@@ -36,7 +35,6 @@ cmp.setup({
                     buffer     = " buffer",
                     path       = " path  ",
                     treesitter = " tree  ",
-                    tags       = " tag   ",
                 })[entry.source.name]
                 return vim_item
             end
