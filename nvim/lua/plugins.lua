@@ -49,7 +49,7 @@ require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = lua_path("treesitter") }
     use { 'lukas-reineke/indent-blankline.nvim', config = lua_path("indent-blankline") }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-    use { 'SmiteshP/nvim-gps', config = lua_path("nvim-gps") }
+    use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig", config = lua_path("nvim-navic") }
 
     -- Syntax
     use { 'junegunn/vim-easy-align' }
@@ -104,9 +104,6 @@ require('packer').startup(function(use)
 
     -- Highlight Todo and similar comments
     use { 'folke/todo-comments.nvim', config = lua_path("todo-comments") }
-
-    -- NOTE: Soon to be deprecated by `set splitkeep=screen` - scheduled for v0.9
-    use { 'luukvbaal/stabilize.nvim', config = lua_path("stabilize") }
 
     -- Create REST calls from HTTP files
     use { 'NTBBloodbath/rest.nvim' }

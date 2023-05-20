@@ -20,5 +20,7 @@ vim.opt.mouse = 'a'
 vim.opt.hidden = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
+vim.opt.splitkeep = "screen"
+
 require("settings.keymap")
 require("settings.completion")

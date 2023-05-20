@@ -3,8 +3,6 @@ vim.g.nvim_tree_auto_ignore_ft = 'startify'
 require'nvim-tree'.setup {
     disable_netrw       = true,
     hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
     open_on_tab         = true,
     hijack_directories   = {
         enable = true,
