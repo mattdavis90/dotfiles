@@ -22,7 +22,7 @@ setopt nonomatch
 export PATH=~/bin:$PATH:~/go/bin:~/.local/bin
 
 if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
-    export PROJECT_HOME=/home/matt/Projects/
+    export PROJECT_HOME=$HOME/Projects/
     . ~/.local/bin/virtualenvwrapper.sh
 fi
 
