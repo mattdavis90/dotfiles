@@ -1,0 +1,6 @@
+gui:
+  theme:
+    selectedLineBgColor:
+     - reverse
+quitOnTopLevelReturn: false
+notARepository: 'skip'
