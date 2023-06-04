@@ -27,17 +27,19 @@ The bootstrap script will run a sparse-checkout to remove the `README.md` and `U
   - Custom theme based on [Sonokai](https://github.com/sainnhe/sonokai)
 
 - ZSH
-  - Zplug configuration
-  - Plugins from Prezto for
-    - [environment](https://github.com/sorin-ionescu/prezto/blob/master/modules/environment/README.md)
-    - [completion](https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/README.md)
-    - [directory](https://github.com/sorin-ionescu/prezto/blob/master/modules/directory/README.md)
-      - Note: this plugin disable clobber, I re-enable it
-    - [history](https://github.com/sorin-ionescu/prezto/blob/master/modules/history/init.zsh)
-      - Note: this plugin enables shared history, I disable it
-  - ZSH Users additional [completions](https://github.com/zsh-users/zsh-completions)
-  - ZSH Users [substring search](https://github.com/zsh-users/zsh-history-substring-search)
-  - Oh-my-zsh [keybindings](https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh)
+  - [Antidote](https://getantidote.github.io) configuration
+    - Plugins from Prezto for
+      - [environment](https://github.com/sorin-ionescu/prezto/blob/master/modules/environment/README.md)
+      - [completion](https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/README.md)
+      - [directory](https://github.com/sorin-ionescu/prezto/blob/master/modules/directory/README.md)
+        - Note: this plugin disable clobber, I re-enable it
+      - [history](https://github.com/sorin-ionescu/prezto/blob/master/modules/history/init.zsh)
+        - Note: this plugin enables shared history, I disable it
+    - ZSH Users additional [completions](https://github.com/zsh-users/zsh-completions)
+    - ZSH Users [substring search](https://github.com/zsh-users/zsh-history-substring-search)
+    - Oh-my-zsh [keybindings](https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh)
+    - [Emoji CLI](https://github.com/b4b4r07/emoji-cli)
+    - Lazy [NVM](https://github.com/lukechilds/zsh-nvm)
   - Set `nonomatch` so that we can send a glob as an arg if it doens't match
   - Custom theme
     - Two line PROMPT
@@ -50,8 +52,7 @@ The bootstrap script will run a sparse-checkout to remove the `README.md` and `U
       - Time when prompt was drawn
       - Number of background jobs
   - Add $HOME/bin to $PATH
-  - Load Python's virtualenvwrapper
-  - Load up NVM
+  - Load Python's virtualenvwrapper (lazily)
   - Aliases for coloured ls, grep, ll, and nvim
   - vim as EDITOR
 
