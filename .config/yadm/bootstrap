@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd "$HOME"
+
+# Sparse checkout to avoid README and UNLICENSE cluttering $HOME
+# Thanks to https://github.com/rvalieris/dotfiles/blob/master/.config/yadm/bootstrap
+yadm gitconfig core.sparseCheckout true
+yadm sparse-checkout set '/*' '!README.md' '!UNLICENSE'
