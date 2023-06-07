@@ -1,1 +1,1 @@
-require 'ft.golang'
+require("ft.golang")

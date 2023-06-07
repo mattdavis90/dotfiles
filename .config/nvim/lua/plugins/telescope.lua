@@ -1,22 +1,31 @@
-local telescope = require('telescope')
-
-telescope.setup{
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        }
-    }
+return {
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = {
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzy-native.nvim',
+            'nvim-telescope/telescope-project.nvim',
+        },
+        keys = {
+            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files (telescope)" },
+            { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep (telescope)" },
+            { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffer (telescope)" },
+            { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags (telescope)" },
+        },
+        opts = {
+            extensions = {
+                fzy_native = {
+                    override_generic_sorter = false,
+                    override_file_sorter = true,
+                }
+            }
+        },
+        config = function()
+            local telescope = require('telescope')
+            telescope.load_extension('fzy_native')
+            telescope.load_extension('project')
+            telescope.load_extension("notify")
+        end
+    },
 }
-
-telescope.load_extension('fzy_native')
-telescope.load_extension('project')
-telescope.load_extension('neoclip')
-telescope.load_extension("notify")
-telescope.load_extension('lsp_handlers')
-
-vim.cmd [[nnoremap <leader>ff <cmd>Telescope find_files<cr>]]
-vim.cmd [[nnoremap <leader>fg <cmd>Telescope live_grep<cr>]]
-vim.cmd [[nnoremap <leader>fb <cmd>Telescope buffers<cr>]]
-vim.cmd [[nnoremap <leader>fh <cmd>Telescope help_tags<cr>]]
-vim.cmd [[nnoremap <leader>fy <cmd>Telescope neoclip<cr>]]
