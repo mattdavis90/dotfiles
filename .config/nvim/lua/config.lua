@@ -55,3 +55,9 @@ vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true, desc = "Uninden
 vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true, desc = "Indent block" })
 vim.keymap.set('n', '<home>', '^', { noremap = false, silent = true, desc = "Goto start of line" })
 vim.keymap.set('i', '<home>', '<C-O>^', { noremap = true, silent = true, desc = "Goto start of line" })
+
+vim.g.nvim_tree_auto_ignore_ft = 'startify'
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})

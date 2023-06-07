@@ -59,11 +59,6 @@ return {
                 },
             })
 
-            vim.g.nvim_tree_auto_ignore_ft = 'startify'
-            vim.api.nvim_create_autocmd('BufEnter', {
-                command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
-                nested = true,
-            })
         end
     },
 
@@ -99,8 +94,9 @@ return {
 
     -- Start where you left off
     {
-        'farmergreg/vim-lastplace',
+        'ethanholz/nvim-lastplace',
         event = "BufEnter",
+        opts = {},
     },
 
     -- Floating terminal and LazyGit
@@ -207,16 +203,69 @@ return {
         end
     },
 
-    --    -- Display a scrollbar with position and errors
-    --    { 'petertriho/nvim-scrollbar', after = "gitsigns.nvim", config = lua_path("nvim-scrollbar") },
-    --
-    --    -- Search plugin with N/M annotion - hooks into scrollbar
-    --    { 'kevinhwang91/nvim-hlslens', after = "nvim-scrollbar", config = lua_path("hlslens") },
-    --
-    --    -- Smart list of buffers
-    --    { 'matbme/JABS.nvim', config = lua_path("jabs") },
-    --
-    --    -- Code minimap
-    --    { 'gorbit99/codewindow.nvim', config = lua_path("codewindow") },
+    -- Display a scrollbar with position and errors
+    {
+        'petertriho/nvim-scrollbar',
+        dependencies = {
+            "gitsigns.nvim",
+        },
+        opts = {
+            handlers = {
+                cursor = false,
+                diagnostic = true,
+                gitsigns = true,
+                handle = true,
+                search = false,
+            },
+            show_in_active_only = true
+        }
+    },
+
+    -- Search plugin with N/M annotion - hooks into scrollbar
+    {
+        'kevinhwang91/nvim-hlslens',
+        dependencies = {
+            "nvim-scrollbar",
+        },
+        keys = {
+            { 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>" },
+            { 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>" },
+            { '*', "*<Cmd>lua require('hlslens').start()<CR>" },
+            { '#', "#<Cmd>lua require('hlslens').start()<CR>" },
+            { 'g*', "g*<Cmd>lua require('hlslens').start()<CR>" },
+            { 'g#', "g#<Cmd>lua require('hlslens').start()<CR>" },
+        },
+        config = function()
+            require("scrollbar.handlers.search").setup()
+        end
+    },
+
+    -- Smart list of buffers
+    {
+        'matbme/JABS.nvim',
+        version = false,
+        keys = {
+            { '<leader>b', "<cmd>lua require('jabs').open()<cr>", desc = "Show JABS" },
+        },
+        opts = {},
+    },
+
+    -- Code minimap
+    {
+        'gorbit99/codewindow.nvim',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+        keys = {
+            { '<leader>m', "<cmd>lua require('codewindow').toggle_minimap()<cr>", desc = "Toggle minimap" },
+        },
+        opts = {
+            exclude_filetypes = { "NvimTree" },
+            use_lsp = true,
+            use_treesitter = true,
+            use_git = true,
+            show_cursor = true,
+        },
+    },
 
 }
