@@ -12,6 +12,7 @@ return {
             { '<leader>li', vim.lsp.buf.implementation, desc = "Goto implementation" },
             { '<leader>lf', vim.lsp.buf.format, desc = "Format file" },
         },
+        event = { "BufReadPost", "BufNewFile" },
         config = function()
             require("plugins.lsp.servers")
         end

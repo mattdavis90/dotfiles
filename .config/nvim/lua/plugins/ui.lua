@@ -71,17 +71,8 @@ return {
                 lualine_a = {
                     { 'mode', separator = { right = '' } },
                 },
-                lualine_b = { 'branch', 'filename' },
-                lualine_c = {
-                    {
-                        function()
-                            return require("nvim-navic").get_location()
-                        end,
-                        cond = function()
-                            return require("nvim-navic").is_available()
-                        end
-                    },
-                },
+                lualine_b = { 'branch' },
+                lualine_c = {},
                 lualine_x = {
                     {
                         'diagnostics',
@@ -90,7 +81,6 @@ return {
                         separator = { left = '' },
                         padding = { right = 2 }
                     },
-                    'filetype',
                 },
                 lualine_y = { 'progress' },
                 lualine_z = {
@@ -107,6 +97,20 @@ return {
             },
             tabline = {},
             extensions = { 'nvim-tree', 'fzf', 'quickfix', 'toggleterm', "lazy" },
+        },
+    },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = false,
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons",
+        },
+        event = "VeryLazy",
+        opts = {
+            show_modified = true,
+            exclude_filetypes = { "netrw", "toggleterm", "NvimTree" },
         },
     },
     {
@@ -163,29 +167,4 @@ return {
             alpha.setup(dashboard.opts)
         end
     },
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        opts = {
-            options = {
-                -- close_command = function(n) require("mini.bufremove").delete(n, false) end,
-                -- right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
-                diagnostics = "nvim_lsp",
-                always_show_bufferline = false,
-                diagnostics_indicator = function(count, level)
-                    local icon = level:match("error") and " " or " "
-                    return " " .. icon .. count
-                end,
-                offsets = {
-                    {
-                        filetype = "NvimTree",
-                        text = "NvimTree",
-                        highlight = "Directory",
-                        text_align = "left",
-                    },
-                },
-            },
-        },
-    }
 }
