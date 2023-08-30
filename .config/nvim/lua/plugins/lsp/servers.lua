@@ -47,19 +47,14 @@ nvim_lsp.eslint.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- C and Arduino
--- nvim_lsp.ccls.setup {
---     capabilities = require('cmp_nvim_lsp').default_capabilities(),
---     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
--- }
-nvim_lsp.clangd.setup {
+nvim_lsp.ccls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    cmd = {
-        "clangd",
-        "--background-index",
-        "--query-driver=/home/matt/.platformio/packages/toolchain-xtensa-esp32s3/bin/xtensa-esp32s3-elf-gcc*"
-    },
-    filetypes = { "c", "cpp" }
+    filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
 }
+-- nvim_lsp.clangd.setup {
+--     capabilities = require('cmp_nvim_lsp').default_capabilities(),
+--     filetypes = { "c", "cpp" }
+-- }
 -- Rust
 nvim_lsp.rust_analyzer.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),

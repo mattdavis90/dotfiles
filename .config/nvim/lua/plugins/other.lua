@@ -39,10 +39,6 @@ return {
                 view                = {
                     width = 30,
                     side = 'left',
-                    mappings = {
-                        custom_only = false,
-                        list = {}
-                    }
                 },
                 renderer            = {
                     indent_markers = {
@@ -191,9 +187,6 @@ return {
     -- Display a scrollbar with position and errors
     {
         'petertriho/nvim-scrollbar',
-        dependencies = {
-            "gitsigns.nvim",
-        },
         opts = {
             handlers = {
                 cursor = false,
