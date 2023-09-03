@@ -85,25 +85,28 @@ return {
         'akinsho/toggleterm.nvim',
         keys = {
             { "<leader>g", "<cmd>lua LazygitToggle()<CR>", desc = "Toggle LazyGit" },
+            { "<leader>/", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm" },
         },
-        opts = {
-            open_mapping = [[<leader>/]],
-            insert_mappings = false,
-            direction = 'float',
-        },
-        config = function()
+        config = function(opts)
+            require("toggleterm").setup(
+                {
+                    open_mapping = [[<leader>/]],
+                    insert_mappings = false,
+                    direction = 'float',
+                    shade_terminals = false,
+                    float_opts = {
+                        winblend = 0,
+                        highlights = {
+                            border = "Normal",
+                            background = "Normal",
+                        },
+                    },
+                }
+            )
             local Terminal = require('toggleterm.terminal').Terminal
             local lazygit  = Terminal:new({
                 cmd = "lazygit",
                 hidden = true,
-                shade_terminals = false,
-                float_opts = {
-                    winblend = 0,
-                    highlights = {
-                        border = "Normal",
-                        background = "Normal",
-                    },
-                },
             })
             function LazygitToggle()
                 lazygit:toggle()
