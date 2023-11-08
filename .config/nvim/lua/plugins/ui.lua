@@ -53,6 +53,10 @@ return {
         lazy = true,
     },
     {
+        'f-person/git-blame.nvim',
+        lazy = true,
+    },
+    {
         'nvim-lualine/lualine.nvim',
         event = "VeryLazy",
         dependencies = {
