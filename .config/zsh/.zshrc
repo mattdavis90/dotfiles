@@ -7,7 +7,7 @@ setopt clobber
 unsetopt share_history
 setopt nonomatch
 
-export PATH=~/bin:$PATH:/usr/local/go/bin:~/.local/bin
+export PATH=~/AppImages:~/bin:$PATH:~/go/bin:/usr/local/go/bin:~/.local/bin
 
 if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
     export PROJECT_HOME=$HOME/Projects/
