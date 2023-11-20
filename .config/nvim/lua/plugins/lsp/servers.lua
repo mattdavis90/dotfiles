@@ -51,10 +51,14 @@ nvim_lsp.ccls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
 }
--- nvim_lsp.clangd.setup {
---     capabilities = require('cmp_nvim_lsp').default_capabilities(),
---     filetypes = { "c", "cpp" }
--- }
+-- XML
+nvim_lsp.lemminx.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- GLSL
+nvim_lsp.glsl_analyzer.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
 -- Rust
 nvim_lsp.rust_analyzer.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
