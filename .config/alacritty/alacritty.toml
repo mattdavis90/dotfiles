@@ -1,0 +1,33 @@
+import = ["~/.config/alacritty/theme.toml"]
+
+[font]
+size = 8.0
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+chars = "\u001E"
+key = "Key6"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B."
+key = "Period"
+mods = "Alt"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = false
