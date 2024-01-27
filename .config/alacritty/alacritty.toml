@@ -4,7 +4,24 @@ import = ["~/.config/alacritty/theme.toml"]
 size = 8.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "alacritty"
+style = "Regular"
+
+[font.bold]
+family = "alacritty"
+style = "Bold"
+
+[font.italic]
+family = "alacritty"
+style = "Italic"
+
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
