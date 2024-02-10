@@ -59,6 +59,31 @@ nvim_lsp.lemminx.setup {
 nvim_lsp.glsl_analyzer.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
+nvim_lsp.yamlls.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- Helm
+nvim_lsp.helm_ls.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    settings = {
+        ['helm-ls'] = {
+            yamlls = {
+                enabled = true,
+                diagnosticsLimit = 50,
+                showDiagnosticsDirectly = false,
+                path = "yaml-language-server",
+                config = {
+                    schemas = {
+                        ["http://127.0.0.1:8000/all.json"] = "templates/**",
+                        -- ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.4-standalone-strict/all.json"] = "templates/**",
+                    },
+                    completion = true,
+                    hover = true,
+                }
+            },
+        },
+    },
+}
 -- Rust
 nvim_lsp.rust_analyzer.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
