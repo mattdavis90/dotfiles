@@ -59,6 +59,11 @@ nvim_lsp.lemminx.setup {
 nvim_lsp.glsl_analyzer.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
+-- Java
+nvim_lsp.jdtls.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
+-- YAML
 nvim_lsp.yamlls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
