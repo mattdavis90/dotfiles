@@ -217,9 +217,7 @@ return {
             { 'g*', "g*<Cmd>lua require('hlslens').start()<CR>" },
             { 'g#', "g#<Cmd>lua require('hlslens').start()<CR>" },
         },
-        config = function()
-            require("scrollbar.handlers.search").setup()
-        end
+        opts = {},
     },
 
     -- Smart list of buffers
