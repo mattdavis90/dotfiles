@@ -253,4 +253,20 @@ return {
         ft = "helm",
     },
 
+    {
+        'nyngwang/NeoZoom.lua',
+        keys = {
+            { '<leader>z', "<cmd>NeoZoomToggle<cr>", desc = "Toggle zoom" },
+        },
+        opts = {
+            winopts = {
+                offset = {
+                    width = 0.95,
+                    height = 0.95,
+                },
+                border = 'thicc',
+            },
+        }
+    },
+
 }
