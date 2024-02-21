@@ -82,6 +82,12 @@ return {
                         'diagnostics',
                         sources = { 'nvim_diagnostic' },
                         sections = { 'error', 'warn', 'info', 'hint' },
+                        symbols = {
+                            hint = '󰌵 ',
+                            info = ' ',
+                            warning = ' ',
+                            error = ' ',
+                        },
                         separator = { left = '' },
                         padding = { right = 2 }
                     },
