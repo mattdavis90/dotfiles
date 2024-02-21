@@ -21,8 +21,8 @@ return {
                 diagnostics         = {
                     enable = true,
                     icons = {
-                        hint = '',
-                        info = '',
+                        hint = '󰌵',
+                        info = '',
                         warning = '',
                         error = '',
                     },

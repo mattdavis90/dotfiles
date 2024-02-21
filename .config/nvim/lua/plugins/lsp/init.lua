@@ -62,4 +62,9 @@ return {
             { "<leader>t", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
         },
     },
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^4', -- Recommended
+        ft = { 'rust' },
+    }
 }
