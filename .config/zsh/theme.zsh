@@ -60,7 +60,7 @@ venv_prompt() {
 }
 
 background_jobs() {
-    echo "%{$fg[red]%}%(1j.[%j bg].) %{$reset_color%}"
+    echo "%{$fg[red]%}%(1j.[%j bg] .)%{$reset_color%}"
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
@@ -68,16 +68,16 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} ✈%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✭%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➦%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%} ✱%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}󰆴 %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%}󰘭 %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%} %{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$fg[red]%} ⬇%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg[green]%} ⬆%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg[yellow]%} ⬌%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$fg[red]%}⬇ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg[green]%}⬆ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg[yellow]%}⬌ %{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$reset_color%}[%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}]"
