@@ -1,17 +1,23 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = Matt Davis
 	email = mattdavis90@googlemail.com
 	signingkey = mattdavis90@googlemail.com
+
 [pull]
-	rebase = false
+    rebase = false
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
 [core]
 	quotePath = false
-	commitGraph = true
+    commitGraph = true
+
 [receive]
-	advertisePushOptions = true
+    advertisePushOptions = true
+
 [gc]
 	writeCommitGraph = true
+
+[commit]
+	gpgsign = true
