@@ -12,6 +12,7 @@
 [core]
 	quotePath = false
     commitGraph = true
+    excludesFile = ~/.config/git/ignore
 
 [receive]
     advertisePushOptions = true
