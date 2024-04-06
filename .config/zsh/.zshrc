@@ -9,11 +9,6 @@ setopt nonomatch
 
 export PATH=~/AppImages:~/bin:$PATH:~/go/bin:/usr/local/go/bin:~/.local/bin
 
-if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
-    export PROJECT_HOME=$HOME/Projects/
-    . ~/.local/bin/virtualenvwrapper_lazy.sh
-fi
-
 export PNPM_HOME=~/.local/share/pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;

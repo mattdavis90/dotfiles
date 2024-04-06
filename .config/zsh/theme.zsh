@@ -56,7 +56,7 @@ current_time() {
 
 venv_prompt() {
     [ -n "${VIRTUAL_ENV}" ] || return
-    echo "%{$fg[yellow]%}(\ue235 ${VIRTUAL_ENV:t})%{$reset_color%}"
+    echo "%{$fg[yellow]%}(\ue235 ${VIRTUAL_ENV:t}) %{$reset_color%}"
 }
 
 background_jobs() {
