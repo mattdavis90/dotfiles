@@ -42,12 +42,17 @@ directory() {
     echo "$(section_start) \ue5fe %0~$(section_end)"
 }
 
-git_prompt() {
+git_branch() {
     [[ ! -z $(git_current_branch) ]] || return
     SECTION_FG="black"
     SECTION_BG="blue"
     NEXT_SECTION_BG="black"
     echo "$(section_start) \ue0a0 $(git_prompt_info)$(section_end)"
+}
+
+git_prompt() {
+    [[ ! -z $(git_current_branch) ]] || return
+    echo "$(git_prompt_status)$(git_remote_status)$(git_prompt_short_sha) "
 }
 
 current_time() {
@@ -84,6 +89,6 @@ ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}]"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 setopt PROMPT_SUBST
-PROMPT='$(username)$(directory)$(git_prompt)
+PROMPT='$(username)$(directory)$(git_branch)
 $(prompt_indicator) '
-RPROMPT='%{$(echotc UP 1)%}$(venv_prompt)$(git_prompt_status)$(git_remote_status)$(git_prompt_short_sha) $(background_jobs)$(current_time)%{$(echotc DO 1)%}'
+RPROMPT='%{$(echotc UP 1)%}$(venv_prompt)$(git_prompt)$(background_jobs)$(current_time)%{$(echotc DO 1)%}'
