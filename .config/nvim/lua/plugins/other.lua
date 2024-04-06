@@ -269,4 +269,26 @@ return {
         }
     },
 
+    {
+        "tpope/vim-abolish",
+        -- lazy = false,
+        keys = {
+            { 'crs', desc = "Snake Case" },
+            { 'cr_', desc = "Snake Case" },
+            { 'crm', desc = "Mixed Case" },
+            { 'crc', desc = "Camel Case" },
+            { 'cru', desc = "Snake Upper Case" },
+            { 'crU', desc = "Snake Upper Case" },
+            { 'crk', desc = "Kebab Case" },
+            { 'crt', desc = "Title Case (not reversible)" },
+            { 'cr-', desc = "Kebab Case (not reversible)" },
+            { 'cr.', desc = "Dot Case (not reversible)" },
+            { 'cr<space>', desc = "Space Case (not reversible)" },
+        },
+        cmd = {
+            "Abolish",
+            "Subvert",
+        },
+    },
+
 }
