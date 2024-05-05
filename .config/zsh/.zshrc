@@ -1,9 +1,10 @@
-zstyle :omz:alpha:lib:git async-prompt false
+# Enable Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
-
-source ${ZDOTDIR:-~}/theme.zsh
 
 setopt clobber
 unsetopt share_history
@@ -33,3 +34,6 @@ alias vim=nvim
 
 export VISUAL=nvim
 export EDITOR=nvim
+
+# Load p10k settings
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
