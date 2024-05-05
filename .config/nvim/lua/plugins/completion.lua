@@ -11,7 +11,6 @@ return {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'ray-x/cmp-treesitter',
-            'rafamadriz/friendly-snippets',
             'onsails/lspkind-nvim',
         },
         config = function()
