@@ -1,3 +1,5 @@
+zstyle :omz:alpha:lib:git async-prompt false
+
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
