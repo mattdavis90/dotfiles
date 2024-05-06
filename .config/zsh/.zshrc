@@ -3,8 +3,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZLE_RPROMPT_INDENT=0
+
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+function zsh_stats() {
+    # From https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/functions.zsh#L1C1-L1C23
+    fc -l 1 \
+        | awk '{ CMD[$2]++; count++; } END { for (a in CMD) print CMD[a] " " CMD[a]*100/count "% " a }' \
+        | grep -v "./" | sort -nr | head -n 20 | column -c3 -s " " -t | nl
+}
+
+function spectrum() {
+    # From https://github.com/romkatv/powerlevel10k/blob/master/config/p10k-rainbow.zsh#L6
+    for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
 
 setopt clobber
 unsetopt share_history
