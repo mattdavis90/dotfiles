@@ -29,7 +29,7 @@ typeset -g FAST_THEME_NAME="sonokai"
 : ${FAST_HIGHLIGHT_STYLES[sonokaicomment]:=fg=12}
 : ${FAST_HIGHLIGHT_STYLES[sonokaivariable]:=fg=1}
 : ${FAST_HIGHLIGHT_STYLES[sonokaimathvar]:=fg=1}
-: ${FAST_HIGHLIGHT_STYLES[sonokaimathnum]:=fg=9}
+: ${FAST_HIGHLIGHT_STYLES[sonokaimathnum]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokaimatherr]:=fg=1,bold}
 : ${FAST_HIGHLIGHT_STYLES[sonokaiassign-array-bracket]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokaifor-loop-variable]:=fg=1}
@@ -44,7 +44,7 @@ typeset -g FAST_THEME_NAME="sonokai"
 : ${FAST_HIGHLIGHT_STYLES[sonokaicase-input]:=fg=1}
 : ${FAST_HIGHLIGHT_STYLES[sonokaicase-parentheses]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokaicase-condition]:=bg=10}
-: ${FAST_HIGHLIGHT_STYLES[sonokaicorrect-subtle]:=fg=8}
+: ${FAST_HIGHLIGHT_STYLES[sonokaicorrect-subtle]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokaiincorrect-subtle]:=fg=1}
 : ${FAST_HIGHLIGHT_STYLES[sonokaisubtle-separator]:=fg=8}
 : ${FAST_HIGHLIGHT_STYLES[sonokaisubtle-bg]:=bg=10}
@@ -59,5 +59,5 @@ typeset -g FAST_THEME_NAME="sonokai"
 : ${FAST_HIGHLIGHT_STYLES[sonokaidouble-sq-bracket]:=fg=4}
 : ${FAST_HIGHLIGHT_STYLES[sonokaidouble-paren]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokaioptarg-string]:=fg=2}
-: ${FAST_HIGHLIGHT_STYLES[sonokaioptarg-number]:=fg=9}
+: ${FAST_HIGHLIGHT_STYLES[sonokaioptarg-number]:=fg=5}
 : ${FAST_HIGHLIGHT_STYLES[sonokairecursive-base]:=none}
