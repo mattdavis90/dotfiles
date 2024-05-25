@@ -51,6 +51,10 @@ nvim_lsp.ccls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
 }
+-- Gleam
+nvim_lsp.gleam.setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
 -- XML
 nvim_lsp.lemminx.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
