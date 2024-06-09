@@ -57,9 +57,25 @@ return {
     {
         "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
-        opts = { use_diagnostic_signs = true },
+        opts = {
+            auto_close = true,
+            modes = {
+                cascade = {
+                    mode = "diagnostics",
+                    filter = function(items)
+                        local severity = vim.diagnostic.severity.HINT
+                        for _, item in ipairs(items) do
+                            severity = math.min(severity, item.severity)
+                        end
+                        return vim.tbl_filter(function(item)
+                            return item.severity == severity
+                        end, items)
+                    end,
+                },
+            },
+        },
         keys = {
-            { "<leader>t", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
+            { "<leader>t", "<cmd>Trouble cascade toggle<cr>", desc = "Toggle Trouble Diagnostics" },
         },
     },
     {
