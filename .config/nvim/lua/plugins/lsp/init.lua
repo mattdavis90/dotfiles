@@ -12,8 +12,14 @@ return {
             { '<leader>li', vim.lsp.buf.implementation, desc = "Goto implementation" },
             { '<leader>lf', vim.lsp.buf.format, desc = "Format file" },
         },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
         event = { "BufReadPost", "BufNewFile" },
         config = function()
+            require("mason").setup()
+            require("mason-lspconfig").setup()
             require("plugins.lsp.servers")
         end
     },
@@ -82,5 +88,5 @@ return {
         'mrcjkb/rustaceanvim',
         version = '^4', -- Recommended
         ft = { 'rust' },
-    }
+    },
 }
