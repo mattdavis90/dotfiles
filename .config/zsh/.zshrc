@@ -43,7 +43,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias ll="ls -l"
 alias vim=nvim
 
 export VISUAL=nvim
