@@ -28,20 +28,20 @@ nvim_lsp.gopls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- JavaScript and Typescript
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    commands = {
-        TSServerOrganizeImports = {
-            function()
-                local params = {
-                    command = "_typescript.organizeImports",
-                    arguments = { vim.api.nvim_buf_get_name(0) },
-                }
-                vim.lsp.buf.execute_command(params)
-            end,
-            description = "Organize Imports",
-        },
-    },
+    -- commands = {
+    --     TSServerOrganizeImports = {
+    --         function()
+    --             local params = {
+    --                 command = "_typescript.organizeImports",
+    --                 arguments = { vim.api.nvim_buf_get_name(0) },
+    --             }
+    --             vim.lsp.buf.execute_command(params)
+    --         end,
+    --         description = "Organize Imports",
+    --     },
+    -- },
 }
 nvim_lsp.eslint.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
