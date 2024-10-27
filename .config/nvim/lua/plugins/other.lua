@@ -60,8 +60,10 @@ return {
                 callback = function()
                     local layout = vim.api.nvim_call_function("winlayout", {})
                     if layout[1] == "leaf" and
-                        vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and
-                        layout[3] == nil then vim.cmd("quit") end
+                        vim.api.nvim_get_option_value("filetype", { buf = vim.api.nvim_win_get_buf(layout[2]) }) == "NvimTree" and
+                        layout[3] == nil then
+                        vim.cmd("quit")
+                    end
                 end
             })
         end
@@ -86,9 +88,9 @@ return {
         'akinsho/toggleterm.nvim',
         keys = {
             { "<leader>g", "<cmd>lua LazygitToggle()<CR>", desc = "Toggle LazyGit" },
-            { "<leader>/", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm" },
+            { "<leader>/", "<cmd>ToggleTerm<CR>",          desc = "ToggleTerm" },
         },
-        config = function(opts)
+        config = function()
             require("toggleterm").setup(
                 {
                     open_mapping = [[<leader>/]],
@@ -130,7 +132,7 @@ return {
         version = false,
         keys = {
             { "gc", desc = "Toggle comments" },
-            { "gc", mode = "v", desc = "Toggle comments" },
+            { "gc", mode = "v",              desc = "Toggle comments" },
         },
         opts = {},
     },
@@ -210,10 +212,10 @@ return {
             "nvim-scrollbar",
         },
         keys = {
-            { 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>" },
-            { 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>" },
-            { '*', "*<Cmd>lua require('hlslens').start()<CR>" },
-            { '#', "#<Cmd>lua require('hlslens').start()<CR>" },
+            { 'n',  "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>" },
+            { 'N',  "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>" },
+            { '*',  "*<Cmd>lua require('hlslens').start()<CR>" },
+            { '#',  "#<Cmd>lua require('hlslens').start()<CR>" },
             { 'g*', "g*<Cmd>lua require('hlslens').start()<CR>" },
             { 'g#', "g#<Cmd>lua require('hlslens').start()<CR>" },
         },
@@ -273,16 +275,16 @@ return {
         "tpope/vim-abolish",
         -- lazy = false,
         keys = {
-            { 'crs', desc = "Snake Case" },
-            { 'cr_', desc = "Snake Case" },
-            { 'crm', desc = "Mixed Case" },
-            { 'crc', desc = "Camel Case" },
-            { 'cru', desc = "Snake Upper Case" },
-            { 'crU', desc = "Snake Upper Case" },
-            { 'crk', desc = "Kebab Case" },
-            { 'crt', desc = "Title Case (not reversible)" },
-            { 'cr-', desc = "Kebab Case (not reversible)" },
-            { 'cr.', desc = "Dot Case (not reversible)" },
+            { 'crs',       desc = "Snake Case" },
+            { 'cr_',       desc = "Snake Case" },
+            { 'crm',       desc = "Mixed Case" },
+            { 'crc',       desc = "Camel Case" },
+            { 'cru',       desc = "Snake Upper Case" },
+            { 'crU',       desc = "Snake Upper Case" },
+            { 'crk',       desc = "Kebab Case" },
+            { 'crt',       desc = "Title Case (not reversible)" },
+            { 'cr-',       desc = "Kebab Case (not reversible)" },
+            { 'cr.',       desc = "Dot Case (not reversible)" },
             { 'cr<space>', desc = "Space Case (not reversible)" },
         },
         cmd = {
