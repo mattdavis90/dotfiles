@@ -12,7 +12,7 @@ vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 -- Python
 nvim_lsp.pylsp.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         pylsp = {
             plugins = {
@@ -25,11 +25,11 @@ nvim_lsp.pylsp.setup {
 }
 -- GoLang
 nvim_lsp.gopls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- JavaScript and Typescript
 nvim_lsp.ts_ls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     -- commands = {
     --     TSServerOrganizeImports = {
     --         function()
@@ -44,36 +44,36 @@ nvim_lsp.ts_ls.setup {
     -- },
 }
 nvim_lsp.eslint.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- C and Arduino
 nvim_lsp.ccls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
 }
 -- Gleam
 nvim_lsp.gleam.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- XML
 nvim_lsp.lemminx.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- GLSL
 nvim_lsp.glsl_analyzer.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- Java
 nvim_lsp.jdtls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- YAML
 nvim_lsp.yamlls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- Helm
 nvim_lsp.helm_ls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         ['helm-ls'] = {
             yamlls = {
@@ -95,11 +95,11 @@ nvim_lsp.helm_ls.setup {
 }
 -- Svelte
 nvim_lsp.svelte.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- Lua
 nvim_lsp.lua_ls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         Lua = {
             runtime = {
@@ -122,14 +122,14 @@ nvim_lsp.lua_ls.setup {
     },
 }
 nvim_lsp.jsonls.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 nvim_lsp.gdscript.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 -- PHP
 nvim_lsp.intelephense.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     settings = {
         intelephense = {
             stubs = {
