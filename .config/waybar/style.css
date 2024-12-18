@@ -4,7 +4,16 @@
   min-height: 0;
 }
 
-@import "theme.css";
+@define-color main-fg   #E2E2E3;
+@define-color main-bg   #2C2E34;
+@define-color main-br   #354157;
+
+@define-color active-bg #76CCE0;
+@define-color active-fg #2C2E34;
+
+@define-color green     #9ED072;
+@define-color yellow    #E7C664;
+@define-color red       #FC5D7C;
 
 /* === Main Background === */
 
@@ -38,7 +47,7 @@ tooltip label {
 /* === Workspace Buttons === */
 
 #workspaces button {
-  color: @module-fg;
+  color: @main-fg;
   border-radius: 8px;
   box-shadow: none;
   margin: 2px 0;
@@ -46,8 +55,7 @@ tooltip label {
   transition: none;
 }
 #workspaces button:hover {
-  color: @hover-fg;
-  background: @hover-bg;
+  color: @active-fg;
   text-shadow: none;
   box-shadow: none;
 }
@@ -73,10 +81,16 @@ tooltip label {
 #backlight,
 #battery,
 #clock,
-#tray {
+#tray,
+#privacy,
+#custom-power {
   opacity: 1;
-  color: @module-fg;
+  color: @main-fg;
   margin-bottom: 0;
   padding: 0 4px;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+#custom-power {
+    color: @red;
 }

@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "position": "top",
-  "height": 25,
+  "height": 27,
   "spacing": 4,
   "modules-left": [
         "hyprland/workspaces",
@@ -20,6 +20,8 @@
         "battery",
         "clock",
         "tray",
+        "privacy",
+        "custom/power",
     ],
     "tray": {
         "spacing": 10
@@ -92,5 +94,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell"
     },
 }
