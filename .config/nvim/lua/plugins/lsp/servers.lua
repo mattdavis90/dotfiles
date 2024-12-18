@@ -29,6 +29,7 @@ nvim_lsp.gopls.setup {
 }
 -- JavaScript and Typescript
 nvim_lsp.ts_ls.setup {
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
     -- commands = {
     --     TSServerOrganizeImports = {
@@ -97,6 +98,7 @@ nvim_lsp.helm_ls.setup {
 nvim_lsp.svelte.setup {
     -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
+nvim_lsp.html.setup {}
 -- Lua
 nvim_lsp.lua_ls.setup {
     -- capabilities = require('cmp_nvim_lsp').default_capabilities(),

@@ -5,7 +5,9 @@ return {
         dependencies = 'rafamadriz/friendly-snippets',
         version = 'v0.*',
         opts = {
-            keymap = "default",
+            keymap = {
+                preset = "default",
+            },
             highlight = {
                 use_nvim_cmp_as_default = true,
             },
