@@ -4,21 +4,36 @@
   min-height: 0;
 }
 
-@define-color main-fg   #E2E2E3;
-@define-color main-bg   #2C2E34;
-@define-color main-br   #354157;
+/* === Sonokai Theme === */
 
-@define-color active-bg #76CCE0;
-@define-color active-fg #2C2E34;
+@define-color cursor         #E2E2E3;
+@define-color text           #414550;
 
-@define-color green     #9ED072;
-@define-color yellow    #E7C664;
-@define-color red       #FC5D7C;
+@define-color background     #2C2E34;
+@define-color foreground     #E2E2E3;
+
+@define-color black          #181819;
+@define-color red            #FC5D7C;
+@define-color yellow         #E7C664;
+@define-color green          #9ED072;
+@define-color cyan           #F39660;
+@define-color blue           #76CCE0;
+@define-color magenta        #B39DF3;
+@define-color white          #E2E2E3;
+
+@define-color black-bright   #181819;
+@define-color red-bright     #FC5D7C;
+@define-color yellow-bright  #E7C664;
+@define-color green-bright   #9ED072;
+@define-color cyan-bright    #F39660;
+@define-color blue-bright    #76CCE0;
+@define-color magenta-bright #B39DF3;
+@define-color white-bright   #E2E2E3;
 
 /* === Main Background === */
 
 window#waybar {
-  background: @main-bg;
+  background: @background;
 }
 
 /* === Drop Shadow === */
@@ -32,14 +47,14 @@ window#waybar > box {
 /* === Tooltip === */
 
 tooltip {
-  background: @main-bg;
+  background: @background;
   border: solid;
   border-width: 1.5px;
   border-radius: 8px;
-  border-color: @main-br;
+  border-color: @white-bright;
 }
 tooltip label {
-  color: @main-fg;
+  color: @foreground;
   font-weight: normal;
   margin: 0.25px;
 }
@@ -47,7 +62,7 @@ tooltip label {
 /* === Workspace Buttons === */
 
 #workspaces button {
-  color: @main-fg;
+  color: @foreground;
   border-radius: 8px;
   box-shadow: none;
   margin: 2px 0;
@@ -55,13 +70,13 @@ tooltip label {
   transition: none;
 }
 #workspaces button:hover {
-  color: @active-fg;
+  color: @background;
   text-shadow: none;
   box-shadow: none;
 }
 #workspaces button.active {
-  color: @active-fg;
-  background: @active-bg;
+  color: @background;
+  background: @blue;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
   margin: 2px;
@@ -70,27 +85,28 @@ tooltip label {
 
 /* === General === */
 
-#workspaces,
-#window,
-#pulseaudio,
-#network,
-#power-profiles-daemon,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#battery,
-#clock,
-#tray,
-#privacy,
-#custom-power {
+.module {
   opacity: 1;
-  color: @main-fg;
+  color: @foreground;
   margin-bottom: 0;
   padding: 0 4px;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
 
+/* === Custom properties === */
+
 #custom-power {
+    color: @red;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @green;
+}
+
+#power-profiles-daemon.balanced {
+    color: @yellow;
+}
+
+#power-profiles-daemon.performance {
     color: @red;
 }
