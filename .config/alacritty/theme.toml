@@ -1,27 +1,27 @@
-[colors.bright]
-black = "0x7F8490"
-blue = "0x354157"
-cyan = "0x85D3F2"
-green = "0x394634"
-magenta = "0xFF6077"
-red = "0x55393D"
-white = "0xA7DF78"
-yellow = "0x4E432F"
-
-[colors.cursor]
-cursor = "0xE2E2E3"
-text = "0x414550"
-
 [colors.normal]
 black = "0x181819"
-blue = "0x76CCE0"
-cyan = "0xF39660"
-green = "0x9ED072"
-magenta = "0xB39DF3"
 red = "0xFC5D7C"
-white = "0xE2E2E3"
 yellow = "0xE7C664"
+green = "0x9ED072"
+cyan = "0xF39660"
+blue = "0x76CCE0"
+magenta = "0xB39DF3"
+white = "0xE2E2E3"
+
+[colors.bright]
+black = "0x7F8490"
+red = "0x55393D"
+yellow = "0x4E432F"
+green = "0x394634"
+cyan = "0x85D3F2"
+blue = "0x354157"
+magenta = "0xFF6077"
+white = "0xA7DF78"
 
 [colors.primary]
 background = "0x2C2E34"
 foreground = "0xE2E2E3"
+
+[colors.cursor]
+cursor = "0xE2E2E3"
+text = "0x414550"
