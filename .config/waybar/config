@@ -5,22 +5,22 @@
   "spacing": 4,
   "modules-left": [
         "hyprland/workspaces",
-    ],
-    "modules-center": [
         "hyprland/window"
     ],
+    "modules-center": [
+    ],
     "modules-right": [
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
+        "privacy",
         "cpu",
         "memory",
         "temperature",
         "backlight",
+        "tray",
+        "network",
+        "pulseaudio",
         "battery",
         "clock",
-        "tray",
-        "privacy",
+        "power-profiles-daemon",
         "custom/power",
     ],
     "tray": {
@@ -28,11 +28,10 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "󰃭 {:%d/%m/%Y 󱑎 %H:%M}"
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage}% "
     },
     "memory": {
         "format": "{}% "
@@ -80,8 +79,8 @@
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
-        "format-muted": "󰝟 {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
