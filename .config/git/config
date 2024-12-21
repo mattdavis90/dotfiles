@@ -1,7 +1,7 @@
 [user]
-	name = Matt Davis
-	email = mattdavis90@googlemail.com
-	signingkey = mattdavis90@googlemail.com
+    name = Matt Davis
+    email = mattdavis90@googlemail.com
+    signingkey = mattdavis90@googlemail.com
 
 [pull]
     rebase = false
@@ -10,7 +10,7 @@
     defaultBranch = main
 
 [core]
-	quotePath = false
+    quotePath = false
     commitGraph = true
     excludesFile = ~/.config/git/ignore
 
@@ -18,7 +18,7 @@
     advertisePushOptions = true
 
 [gc]
-	writeCommitGraph = true
+    writeCommitGraph = true
 
 [commit]
-	gpgsign = true
+    gpgsign = true
