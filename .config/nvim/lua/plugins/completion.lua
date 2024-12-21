@@ -8,10 +8,10 @@ return {
             keymap = {
                 preset = "default",
             },
-            highlight = {
+            appearance = {
                 use_nvim_cmp_as_default = true,
+                nerd_font_variant = 'normal',
             },
-            nerd_font_variant = 'normal',
         }
     },
     {
