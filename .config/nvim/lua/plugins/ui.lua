@@ -49,10 +49,6 @@ return {
         lazy = true,
     },
     {
-        'ryanoasis/vim-devicons',
-        lazy = true,
-    },
-    {
         'f-person/git-blame.nvim',
         lazy = true,
     },

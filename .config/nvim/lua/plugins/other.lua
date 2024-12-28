@@ -169,8 +169,9 @@ return {
 
     -- Highlight instances of the current word
     {
-        'RRethy/vim-illuminate',
+        'nyngwang/murmur.lua',
         event = "BufEnter",
+        opts = {},
     },
 
     -- Display a hint for the keyboard shortcuts
@@ -193,6 +194,7 @@ return {
     -- Display a scrollbar with position and errors
     {
         'petertriho/nvim-scrollbar',
+        event = "BufEnter",
         opts = {
             handlers = {
                 cursor = false,
@@ -291,12 +293,5 @@ return {
             "Abolish",
             "Subvert",
         },
-    },
-
-    {
-        "David-Kunz/gen.nvim",
-        opts = {
-            model = "codegemma",
-        }
     },
 }
