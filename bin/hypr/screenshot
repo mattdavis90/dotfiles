@@ -1,0 +1,18 @@
+#!/bin/bash
+
+case $1 in
+  area)
+      grim -g "$(slurp -b 1B1F28CC -c E06B74ff -s C778DD0D -w 2)" - | swappy -f -
+    ;;
+  window)
+    WINDOW=$(hyprctl activewindow)
+
+    OFFSET=$(echo "${WINDOW}" | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
+    AREA=$(echo "${WINDOW}" | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
+
+    grim -g "${OFFSET} ${AREA}" - | swappy -f -
+    ;;
+  *)
+    grim - | swappy -f -
+    ;;
+esac
