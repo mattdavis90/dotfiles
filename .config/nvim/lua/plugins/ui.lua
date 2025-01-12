@@ -41,17 +41,24 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd [[colorscheme sonokai]]
+            vim.g.sonokai_diagnostic_virtual_text = 'color'
+            vim.cmd.colorscheme('sonokai')
         end
     },
     {
         'nvim-tree/nvim-web-devicons',
         lazy = true,
     },
+
     {
         'f-person/git-blame.nvim',
-        lazy = true,
+        event = "BufEnter",
+        opts = {
+            enabled = true,
+            date_format = "%r (%c)",
+        },
     },
+
     {
         'nvim-lualine/lualine.nvim',
         event = "VeryLazy",
@@ -105,20 +112,6 @@ return {
             extensions = { 'nvim-tree', 'fzf', 'quickfix', 'toggleterm', "lazy" },
         },
     },
-    -- {
-    --     "utilyre/barbecue.nvim",
-    --     name = "barbecue",
-    --     version = false,
-    --     dependencies = {
-    --         "SmiteshP/nvim-navic",
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    --     event = "VeryLazy",
-    --     opts = {
-    --         show_modified = true,
-    --         exclude_filetypes = { "netrw", "toggleterm", "NvimTree" },
-    --     },
-    -- },
 
     {
         'Bekaboo/dropbar.nvim',
