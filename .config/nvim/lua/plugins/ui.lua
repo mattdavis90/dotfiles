@@ -105,20 +105,25 @@ return {
             extensions = { 'nvim-tree', 'fzf', 'quickfix', 'toggleterm', "lazy" },
         },
     },
+    -- {
+    --     "utilyre/barbecue.nvim",
+    --     name = "barbecue",
+    --     version = false,
+    --     dependencies = {
+    --         "SmiteshP/nvim-navic",
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     event = "VeryLazy",
+    --     opts = {
+    --         show_modified = true,
+    --         exclude_filetypes = { "netrw", "toggleterm", "NvimTree" },
+    --     },
+    -- },
+
     {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = false,
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons",
-        },
-        event = "VeryLazy",
-        opts = {
-            show_modified = true,
-            exclude_filetypes = { "netrw", "toggleterm", "NvimTree" },
-        },
+        'Bekaboo/dropbar.nvim',
     },
+
     {
         'goolord/alpha-nvim',
         event = "VimEnter",

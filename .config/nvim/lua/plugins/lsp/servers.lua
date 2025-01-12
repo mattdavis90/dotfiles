@@ -21,6 +21,7 @@ nvim_lsp.jsonls.setup {}
 nvim_lsp.lemminx.setup {}
 nvim_lsp.svelte.setup {}
 nvim_lsp.yamlls.setup {}
+nvim_lsp.vala_ls.setup{}
 
 nvim_lsp.ccls.setup {
     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }

@@ -2,7 +2,9 @@ return {
     {
         'saghen/blink.cmp',
         event = "BufEnter",
-        dependencies = 'rafamadriz/friendly-snippets',
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+        },
         version = 'v0.*',
         opts = {
             keymap = {
@@ -15,7 +17,6 @@ return {
                 nerd_font_variant = 'normal',
             },
             completion = {
-                list = { selection = 'auto_insert' },
                 menu = {
                     draw = {
                         columns = {
@@ -25,7 +26,6 @@ return {
                     },
                 },
                 documentation = { auto_show = true, auto_show_delay_ms = 500 },
-                ghost_text = { enabled = true },
             },
             sources = {
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
