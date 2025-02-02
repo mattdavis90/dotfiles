@@ -7,15 +7,16 @@ return {
         config = function()
             require("nvim-treesitter.configs").setup({
                 ensure_installed = "all",
+                auto_install = false,
+                sync_install = false,
+                ignore_install = {},
+                modules = {},
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
                 indent = {
                     enable = true,
-                },
-                context_commentstring = {
-                    enable = true
                 },
                 rainbow = {
                     enable = true,
@@ -40,16 +41,6 @@ return {
     },
     {
         'JoosepAlviste/nvim-ts-context-commentstring',
-        lazy = true,
-    },
-    {
-        "SmiteshP/nvim-navic",
-        lazy = true,
-        dependencies = { "neovim/nvim-lspconfig" },
-        opts = {
-            lsp = {
-                auto_attach = true,
-            },
-        },
+        event = { "BufReadPost" },
     },
 }
