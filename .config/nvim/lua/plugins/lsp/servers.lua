@@ -29,17 +29,7 @@ nvim_lsp.ccls.setup {
 nvim_lsp.ts_ls.setup {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }
-nvim_lsp.pylsp.setup {
-    settings = {
-        pylsp = {
-            plugins = {
-                flake8 = {
-                    maxLineLength = 88, -- Make flake8 compatible with black
-                },
-            },
-        },
-    },
-}
+nvim_lsp.pyright.setup {}
 nvim_lsp.helm_ls.setup {
     settings = {
         ['helm-ls'] = {
