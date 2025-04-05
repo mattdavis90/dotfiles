@@ -10,9 +10,9 @@ return {
         cmd = "Telescope",
         keys = {
             { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files (telescope)" },
-            { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep (telescope)" },
-            { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffer (telescope)" },
-            { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags (telescope)" },
+            { "<leader>fg", "<cmd>Telescope live_grep<cr>",  desc = "Live grep (telescope)" },
+            { "<leader>fb", "<cmd>Telescope buffers<cr>",    desc = "Buffer (telescope)" },
+            { "<leader>fh", "<cmd>Telescope help_tags<cr>",  desc = "Help tags (telescope)" },
         },
         opts = {
             extensions = {

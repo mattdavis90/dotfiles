@@ -185,10 +185,6 @@ return {
                 },
             },
         },
-        config = function(_, opts)
-            local wk = require("which-key")
-            wk.setup(opts)
-        end
     },
 
     -- Display a scrollbar with position and errors
@@ -275,7 +271,6 @@ return {
 
     {
         "tpope/vim-abolish",
-        -- lazy = false,
         keys = {
             { 'crs',       desc = "Snake Case" },
             { 'cr_',       desc = "Snake Case" },
@@ -297,10 +292,9 @@ return {
 
     {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        event = "bufEnter",
         init = function()
-            vim.diagnostic.config({
-                virtual_text = false,
-            })
+            vim.keymap.set("", "<Leader>le", require("lsp_lines").toggle, { desc = "Toggle LSP Diagnostic Lines" })
         end
     },
 }

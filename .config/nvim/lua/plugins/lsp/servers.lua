@@ -3,11 +3,18 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Diagnostics symbols for display in the sign column.
-local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "󰌵",
+        },
+    },
+})
+
 vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 nvim_lsp.eslint.setup {}
@@ -21,7 +28,7 @@ nvim_lsp.jsonls.setup {}
 nvim_lsp.lemminx.setup {}
 nvim_lsp.svelte.setup {}
 nvim_lsp.yamlls.setup {}
-nvim_lsp.vala_ls.setup{}
+nvim_lsp.vala_ls.setup {}
 
 nvim_lsp.ccls.setup {
     filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
