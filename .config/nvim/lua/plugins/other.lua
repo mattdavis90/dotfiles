@@ -161,12 +161,6 @@ return {
         event = "BufEnter",
     },
 
-    -- Create REST calls from HTTP files
-    {
-        'NTBBloodbath/rest.nvim',
-        ft = "http",
-    },
-
     -- Highlight instances of the current word
     {
         'nyngwang/murmur.lua',
@@ -220,16 +214,6 @@ return {
         opts = {},
     },
 
-    -- Smart list of buffers
-    {
-        'matbme/JABS.nvim',
-        version = false,
-        keys = {
-            { '<leader>b', "<cmd>lua require('jabs').open()<cr>", desc = "Show JABS" },
-        },
-        opts = {},
-    },
-
     -- Code minimap
     {
         'gorbit99/codewindow.nvim',
@@ -249,11 +233,6 @@ return {
     },
 
     {
-        'towolf/vim-helm',
-        ft = "helm",
-    },
-
-    {
         'nyngwang/NeoZoom.lua',
         keys = {
             { '<leader>z', "<cmd>NeoZoomToggle<cr>", desc = "Toggle zoom" },
@@ -267,27 +246,6 @@ return {
                 border = 'thicc',
             },
         }
-    },
-
-    {
-        "tpope/vim-abolish",
-        keys = {
-            { 'crs',       desc = "Snake Case" },
-            { 'cr_',       desc = "Snake Case" },
-            { 'crm',       desc = "Mixed Case" },
-            { 'crc',       desc = "Camel Case" },
-            { 'cru',       desc = "Snake Upper Case" },
-            { 'crU',       desc = "Snake Upper Case" },
-            { 'crk',       desc = "Kebab Case" },
-            { 'crt',       desc = "Title Case (not reversible)" },
-            { 'cr-',       desc = "Kebab Case (not reversible)" },
-            { 'cr.',       desc = "Dot Case (not reversible)" },
-            { 'cr<space>', desc = "Space Case (not reversible)" },
-        },
-        cmd = {
-            "Abolish",
-            "Subvert",
-        },
     },
 
     {
