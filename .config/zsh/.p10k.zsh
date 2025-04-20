@@ -25,6 +25,7 @@
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    nix
     os_icon 
     context_joined
     dir
@@ -75,6 +76,31 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
   typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
+
+  #############################[ os_icon: Nix Shell identifier ]###############################
+  function prompt_nix() {
+    emulate -L zsh
+
+    if [[ -n "$IN_NIX_SHELL" ]]; then
+      if [[ -n $NIX_SHELL_PACKAGES ]]; then
+        local package_names=""
+        local packages=($NIX_SHELL_PACKAGES)
+        for package in $packages; do
+          package_names+=" ${package##*.}"
+        done
+        p10k segment -t "{$package_names }"
+      elif [[ -n $name ]]; then
+        local cleanName=${name#interactive-}
+        cleanName=${cleanName#lorri-keep-env-hack-}
+        cleanName=${cleanName%-environment}
+        p10k segment -t "{ $cleanName }"
+      else # This case is only reached if the nix-shell plugin isn't installed or failed in some way
+        p10k segment -t "nix-shell {}"
+      fi
+    fi
+  }
+  typeset -g POWERLEVEL9K_NIX_FOREGROUND=0
+  typeset -g POWERLEVEL9K_NIX_BACKGROUND=1
 
   #################################[ os_icon: os identifier ]##################################
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=0

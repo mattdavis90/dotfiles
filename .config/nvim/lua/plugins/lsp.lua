@@ -59,9 +59,6 @@ return {
         config = function()
             --- @type { [string]: vim.lsp.Config }
             local servers = {
-                ccls = {
-                    filetypes = { "c", "cpp", "objc", "objcpp", "ino" }
-                },
                 eslint = {},
                 gdscript = {},
                 glsl_analyzer = {},
@@ -107,6 +104,7 @@ return {
                         },
                     },
                 },
+                nil_ls = {},
                 pyright = {},
                 rust_analyzer = {},
                 svelte = {},
@@ -116,7 +114,7 @@ return {
                 yamlls = {},
             }
 
-            local mason_exclude = { "ccls", "gdscript" }
+            local mason_exclude = { "gdscript" }
             local ensure_installed = {}
             for server, settings in pairs(servers) do
                 vim.lsp.config(server, settings)
