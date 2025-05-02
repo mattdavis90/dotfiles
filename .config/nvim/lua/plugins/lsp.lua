@@ -1,9 +1,11 @@
 return {
     {
-        'weilbith/nvim-code-action-menu',
-        cmd = 'CodeActionMenu',
+        "aznhe21/actions-preview.nvim",
         keys = {
-            { "<leader>la", "<cmd>CodeActionMenu<cr>", desc = "Code actions" },
+            { "<leader>la", function() require("actions-preview").code_actions() end, desc = "Code actions" },
+        },
+        opts = {
+            backend = { "nui" },
         },
     },
     {
