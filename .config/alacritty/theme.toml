@@ -1,21 +1,21 @@
 [colors.normal]
 black = "0x181819"
 red = "0xFC5D7C"
-yellow = "0xE7C664"
 green = "0x9ED072"
-cyan = "0xF39660"
+yellow = "0xE7C664"
 blue = "0x76CCE0"
 magenta = "0xB39DF3"
+cyan = "0xF39660"
 white = "0xE2E2E3"
 
 [colors.bright]
 black = "0x7F8490"
 red = "0x55393D"
-yellow = "0x4E432F"
 green = "0x394634"
-cyan = "0x85D3F2"
+yellow = "0x4E432F"
 blue = "0x354157"
 magenta = "0xFF6077"
+cyan = "0x85D3F2"
 white = "0xA7DF78"
 
 [colors.primary]
