@@ -25,7 +25,6 @@
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    nix
     os_icon 
     context_joined
     dir
@@ -36,7 +35,8 @@
   )
 
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    virtualenv
+    nix
+    virtualenv_joined
     background_jobs_joined
     command_execution_time_joined
     time_joined
@@ -88,19 +88,19 @@
         for package in $packages; do
           package_names+=" ${package##*.}"
         done
-        p10k segment -t "{$package_names }"
+        p10k segment -t "{ $package_names }  "
       elif [[ -n $name ]]; then
         local cleanName=${name#interactive-}
         cleanName=${cleanName#lorri-keep-env-hack-}
         cleanName=${cleanName%-environment}
-        p10k segment -t "{ $cleanName }"
+        p10k segment -t "{ $cleanName }  "
       else # This case is only reached if the nix-shell plugin isn't installed or failed in some way
-        p10k segment -t "nix-shell {}"
+        p10k segment -t "nix-shell  "
       fi
     fi
   }
-  typeset -g POWERLEVEL9K_NIX_FOREGROUND=0
-  typeset -g POWERLEVEL9K_NIX_BACKGROUND=1
+  typeset -g POWERLEVEL9K_NIX_FOREGROUND=3
+  typeset -g POWERLEVEL9K_NIX_BACKGROUND=12
 
   #################################[ os_icon: os identifier ]##################################
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=0
