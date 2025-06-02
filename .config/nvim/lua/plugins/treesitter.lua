@@ -6,6 +6,7 @@ return {
         build = ':TSUpdate',
         config = function()
             local ensureInstalled = {
+                "bash",
                 "c",
                 "cpp",
                 "css",
@@ -13,13 +14,15 @@ return {
                 "html",
                 "javascript",
                 "json",
+                "nix",
                 "python",
+                "regex",
                 "rust",
                 "svelte",
                 "typescript",
             }
 
-            local alreadyInstalled = require("nvim-treesitter.config").installed_parsers()
+            local alreadyInstalled = require("nvim-treesitter.config").get_installed("parsers")
             local parsersToInstall = vim.iter(ensureInstalled)
                 :filter(function(parser) return not vim.tbl_contains(alreadyInstalled, parser) end)
                 :totable()
