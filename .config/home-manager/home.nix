@@ -4,7 +4,7 @@
     home.username = "matt";
     home.homeDirectory = "/home/matt";
 
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.11";
 
     home.packages = with pkgs; [
         # Terminal
@@ -12,6 +12,7 @@
         fontconfig
         htop
         nvtopPackages.amd
+        tree-sitter
         tmux
         wl-clipboard
         yadm
@@ -78,24 +79,34 @@
         freecad-wayland
         gearlever
         gimp
-        imv
+        image-roll
         kicad
         # godot
         libreoffice-qt6-fresh
         mpv
         nextcloud-client
+        ollama-rocm
         openscad
-        picocom
+        podman-desktop
         povray
         qalculate-gtk
+        see-cat
+        signal-desktop
         spotify-player
+        steam
         squirreldisk
+        tio
         usbutils
         webcamoid
         wireshark
+        xpano
     ];
 
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+        "steam"
+        "steam-original"
+        "steam-unwrapped"
+        "steam-run"
     ];
 
     programs = {
