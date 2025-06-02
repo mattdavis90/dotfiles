@@ -12,8 +12,9 @@
         fontconfig
         htop
         nvtopPackages.amd
-        tree-sitter
+        ripgrep
         tmux
+        tree-sitter
         wl-clipboard
         yadm
 
