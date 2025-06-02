@@ -57,17 +57,17 @@
         poetry
         (python313.withPackages (ppkgs: [
             ppkgs.pip
-            ppkgs.virtualenv
-            ppkgs.pyserial
             ppkgs.psutil
+            ppkgs.pyserial
+            ppkgs.virtualenv
         ]))
 
         # Other
         acpi
+        dig
         fwupd
         podman-tui
         virt-manager
-        dig
 
         # Apps
         android-tools
@@ -80,22 +80,21 @@
         freecad-wayland
         gearlever
         gimp
+        # godot
         image-roll
         kicad
-        # godot
         libreoffice-qt6-fresh
         mpv
         nextcloud-client
         ollama-rocm
         openscad
-        podman-desktop
         povray
         qalculate-gtk
         see-cat
         signal-desktop
         spotify-player
-        steam
         squirreldisk
+        steam
         tio
         usbutils
         webcamoid
