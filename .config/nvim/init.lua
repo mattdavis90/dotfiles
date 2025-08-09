@@ -16,4 +16,4 @@ require("config")
 require("lazy").setup("plugins");
 
 -- Not currently handled by lspconfig
-require("lsp.ccls");
+-- require("lsp.ccls");

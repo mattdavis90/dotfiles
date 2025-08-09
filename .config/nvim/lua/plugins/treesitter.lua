@@ -14,12 +14,16 @@ return {
                 "html",
                 "javascript",
                 "json",
+                "lua",
+                "markdown",
+                "markdown_inline",
                 "nix",
                 "python",
                 "regex",
                 "rust",
                 "svelte",
                 "typescript",
+                "vim",
             }
 
             local alreadyInstalled = require("nvim-treesitter.config").get_installed("parsers")
