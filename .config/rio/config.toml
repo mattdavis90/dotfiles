@@ -1,0 +1,16 @@
+theme = "sonokai"
+# line-height = 1.1
+
+# [developer]
+# log-level = "DEBUG"
+# enable-log-file = true
+
+[fonts]
+size = 12
+
+[window]
+decorations = "Disabled"
+
+[renderer]
+performance = "High"
+backend = "Vulkan"
