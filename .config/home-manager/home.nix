@@ -8,10 +8,11 @@
 
     home.packages = with pkgs; [
         # Terminal
-        alacritty
         fontconfig
         htop
+        jq
         nvtopPackages.amd
+        rio
         ripgrep
         tmux
         tree-sitter
@@ -75,12 +76,13 @@
         audacity
         baobab
         blender-hip
-        darktable
+        # darktable
         exiftool
         freecad-wayland
         gearlever
+        gnome-disk-utility
         gimp
-        # godot
+        godot
         image-roll
         kicad
         libreoffice-qt6-fresh
@@ -93,13 +95,14 @@
         see-cat
         signal-desktop
         spotify-player
-        squirreldisk
         steam
         tio
         usbutils
+        vivaldi
         webcamoid
         wireshark
         xpano
+        yt-dlp
     ];
 
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
@@ -107,6 +110,7 @@
         "steam-original"
         "steam-unwrapped"
         "steam-run"
+        "vivaldi"
     ];
 
     programs = {
