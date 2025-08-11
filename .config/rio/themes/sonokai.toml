@@ -1,0 +1,23 @@
+[colors]
+black = "#181819"
+red = "#FC5D7C"
+green = "#9ED072"
+yellow = "#E7C664"
+blue = "#76CCE0"
+magenta = "#B39DF3"
+cyan = "#F39660"
+white = "#E2E2E3"
+
+light-black = "#7F8490"
+light-red = "#55393D"
+light-green = "#394634"
+light-yellow = "#4E432F"
+light-blue = "#354157"
+light-magenta = "#FF6077"
+light-cyan = "#85D3F2"
+light-white = "#A7DF78"
+
+background = "#2C2E34"
+foreground = "#E2E2E3"
+
+cursor = "#E2E2E3"
